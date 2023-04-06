@@ -1,0 +1,8 @@
+- name: Install Java on Ubuntu 18
+  become: true
+  roles:
+    - java-ubuntu-18
+  vars:
+    ansible_host: 127.0.0.1
+    ansible_user: ionut-alexandru
+    java_version: "openjdk-11-jdk"

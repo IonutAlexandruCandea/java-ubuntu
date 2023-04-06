@@ -1,0 +1,20 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Java
+  apt:
+    name: "{{ java_version }}"
+    state: present
+
+- name: Display Java installation details
+  command: java -version
+  register: java_version_output
+  ignore_errors: true
+  changed_when: false
+
+- name: Show Java version
+  debug:
+    var: java_version_output.stdout_lines
+  when: java_version_output.rc == 0

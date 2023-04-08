@@ -1,0 +1,9 @@
+- name: Install Java on Ubuntu 20
+  become: true
+  hosts: 127.0.0.1
+  roles:
+    - java-ubuntu-20
+  vars:
+    ansible_host: 127.0.0.1
+    ansible_user: ionut-alexandru
+    java_version: "openjdk-11-jdk"

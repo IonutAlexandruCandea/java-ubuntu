@@ -4,15 +4,14 @@
     name: "{{ java_version }}"
     state: absent
 
-- name: Remove any remaining Java-related directories
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: absent
-  loop:
-    - "/usr/lib/jvm"
-    - "/var/cache/oracle-jdk*"
-    - "/etc/java-*"
-    - "/usr/lib/jvm-*"
+# - name: Remove any remaining Java-related directories
+#   ansible.builtin.file:
+#     path: "{{ item }}"
+#     state: absent
+#   loop:
+#     - "/usr/lib/jvm"
+#     - "/etc/java-*"
+#     - "/usr/lib/jvm-*"
 
 - name: Reload systemd configuration
   command: systemctl daemon-reload

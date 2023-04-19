@@ -1,6 +1,7 @@
 - name: Install Java on Ubuntu 20
   become: true
-  hosts: 127.0.0.1
+  # hosts: 127.0.0.1
+  hosts: all
   roles:
     - java-ubuntu-20
   vars:
